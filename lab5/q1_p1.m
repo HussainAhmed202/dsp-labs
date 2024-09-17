@@ -1,7 +1,7 @@
 clc, clear;
 
 % transfer function
-H = tf([1,1],[1,-0.9,0.81],ts=-1)
+H = tf([1,1],[1,-0.9,0.81],-1)
 
 % extract num and den
 [num,den] = tfdata(H);

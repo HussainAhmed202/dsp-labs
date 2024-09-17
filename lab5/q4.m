@@ -1,10 +1,12 @@
-%clc, clear;
+clc, clear;
 
-n = 200;
-w = linspace(-20,20,n);
-Y = [0 1 1];
-X = [1 -0.9 0.81];
-a = roots(Y);
-b = roots(X);
+num = [1 2];        
+den = [1 0.9];      
 
-freqz(X,Y,w);
+disp('Zeros of the system:');
+roots(num)
+
+disp('Poles of the system:');
+roots(den)
+
+
