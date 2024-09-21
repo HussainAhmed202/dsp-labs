@@ -1,23 +1,36 @@
 %https://www.mathworks.com/help/matlab/ref/ifft.html
 
 clc, clear;
-n = [0:3];
-X = [20, -4+6j, -4, -4-6j];
-subplot(321), stem(n,abs(X)), title("FFT i")
-x = ifft(X)
-subplot(322), stem(n,abs(x)), title("Reconstructed")
 
-clear;
-n = [0:3];
-X = [61 -2+5i -9 -2+5i];
-subplot(323), stem(n,abs(X)), title("FFT ii")
-x = ifft(X)
-subplot(324), stem(n,abs(x)), title("Reconstructed")
+% First Signal (Original A)
+X = [20 -4+6j -4 -4-6j]; n=[0:3];
+figure(1);
+x = ifft(X);
+subplot(1,2,1),stem(n,real(x)), title("Signal Real Part")
+subplot(1,2,2), stem(n,imag(x)), title("Signal Imaginary Part")
 
-clear;
-n = [0:7];
-X = [40 -6+i -10-2i 8-i -8+i -10+2i -6-i 60];
-subplot(325), stem(n,abs(X)), title("FFT iii")
-x = ifft(X)
-subplot(326), stem(n,abs(x)), title("Reconstructed")
+% Second Signal (Original B)
+X = [61 -2+5j -9 -2+5j];
+figure(2);
+x = ifft(X);
+subplot(1,2,1),stem(n,real(x)), title("Signal Real Part")
+subplot(1,2,2), stem(n,imag(x)), title("Signal Imaginary Part")
+
+% Third Signal (Original C)
+X = [40 -6+j -10-2j 8-j -8+j -10+2j -6-j 60]; n = [0:7];
+figure(3);
+x = ifft(X);
+subplot(1,2,1),stem(n,real(x)), title("Signal Real Part")
+subplot(1,2,2), stem(n,imag(x)), title("Signal Imaginary Part")
+
+
+
+
+
+
+
+
+
+
+
 
